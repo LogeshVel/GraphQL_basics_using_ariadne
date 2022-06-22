@@ -1,0 +1,52 @@
+type Query {
+    book(book_id : ID!): GetBookResult
+    books: [Book]
+}
+type Mutation {
+    add_book(input: BookInput!): PostStatus
+    update_book(input: UpdateInput): PutStatus
+    delete_book(book_id: ID!): DeleteStatus
+}
+input UpdateInput{
+    book_id: ID!
+    title: String
+    authors: [UpdateAuthorInput]
+}
+input UpdateAuthorInput{
+    name: String
+    mail: String
+}
+input BookInput{
+    title: String!
+    authors: [AuthorInput]!
+}
+input AuthorInput{
+    name: String!
+    mail: String
+}
+type PutStatus{
+    iserror: Boolean!
+    description: String
+}
+type DeleteStatus{
+    iserror: Boolean!
+    description: String
+}
+type PostStatus{
+    iserror: Boolean!
+    description: String
+    book_id: ID
+}
+type Author{
+    name: String!
+    mail: String
+}
+type Book{
+    title: String!
+    book_id: ID
+    authors: [Author]!
+}
+type GetBookResult{
+    isexists: Boolean!
+    book: Book
+}

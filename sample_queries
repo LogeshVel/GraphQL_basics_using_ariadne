@@ -1,0 +1,56 @@
+query {
+  book(book_id: 1) {
+    isexists
+    book {
+      title
+      book_id
+      authors {
+        name
+        mail
+      }
+    }
+  }
+}
+
+---------------------
+
+query{
+  books{
+    title
+    book_id
+    authors{
+      name
+      mail
+    }
+  }
+}
+
+--------------------
+
+mutation{
+  update_book(input: {book_id:2, authors: [{name: "new name by update"}]}){
+    iserror
+    description
+  }
+}
+
+-------------------
+
+mutation {
+  add_book(input:{title: "Book time",authors: [{name:"browser",mail: "somemail@dot.com"}]}){
+    iserror
+    description
+    book_id
+  }
+}
+
+-------------------
+
+mutation{
+  delete_book(book_id: 1){
+    iserror
+    description
+  }
+}
+
+------------------
