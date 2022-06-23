@@ -51,6 +51,15 @@ def delete_book_from_book_store(book_id):
     return False
 
 
+def get_book_list_for_genre(book_genre):
+    logger.info(f"Getting the books of the given genre - {book_genre}")
+    book_list = []
+    for book in BOOK_STORE:
+        if book.get("genre") == book_genre:
+            book_list.append(book)
+
+    return book_list
+
 
 query = QueryType()
 mutation = MutationType()
@@ -68,6 +77,12 @@ def resolve_book(_, info, book_id):
 def resolve_books(_, info):
     logger.info(f"Query books")
     return BOOK_STORE
+
+
+@query.field("getbooks")
+def resolve_getbooks(_, info, getgenre):
+    logger.info(f"Query getbooks")
+    return get_book_list_for_genre(getgenre)
 
 
 @mutation.field("add_book")

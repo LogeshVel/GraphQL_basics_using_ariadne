@@ -4,6 +4,7 @@ query {
     book {
       title
       book_id
+      genre
       authors {
         name
         mail
@@ -12,12 +13,14 @@ query {
   }
 }
 
+
 ---------------------
 
 query{
   books{
     title
     book_id
+    genre
     authors{
       name
       mail
@@ -37,7 +40,7 @@ mutation{
 -------------------
 
 mutation {
-  add_book(input:{title: "Book time",authors: [{name:"browser",mail: "somemail@dot.com"}]}){
+  add_book(input:{title: "Book time",genre: NONFICTION,authors: [{name:"browser",mail: "mymail@.com"}]}){
     iserror
     description
     book_id
@@ -54,3 +57,11 @@ mutation{
 }
 
 ------------------
+
+query{
+  getbooks(getgenre: FICTION){
+    genre
+    title
+    book_id
+  }
+}
