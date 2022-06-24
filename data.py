@@ -1,7 +1,3 @@
-DEFAULT = {
-    "title": "", "authors": [{"name": ""}]
-}
-
 BOOK_STORE = [
     {
         "title": "Book 1", "book_id": 1, "genre": "FICTION",

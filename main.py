@@ -1,6 +1,6 @@
 from ariadne import QueryType, gql, make_executable_schema, MutationType, load_schema_from_path
 from ariadne.asgi import GraphQL
-from data import BOOK_STORE, DEFAULT
+from data import BOOK_STORE
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -13,8 +13,6 @@ def get_book_from_book_store_by_id(book_id):
         if str(book["book_id"]) == str(book_id):
             logger.info(book)
             return book
-
-    return DEFAULT
 
 
 def is_book_exists_in_book_store(book_id):
@@ -70,7 +68,7 @@ def resolve_book(_, info, book_id):
     logger.info(f"Query book with the Book ID {book_id}")
     if is_book_exists_in_book_store(book_id):
         return {"isexists": True, "book": get_book_from_book_store_by_id(book_id)}
-    return {"isexists": False, "book": DEFAULT}
+    return {"isexists": False}
 
 
 @query.field("books")
