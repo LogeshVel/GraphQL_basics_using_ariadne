@@ -18,13 +18,26 @@ GraphQL CRUD API in Python using ariadne library(schema-first approach)
 
 ### GraphQL Server's schemas,
 
+**Object types**
+
+![Image](https://github.com/LogeshVel/GraphQL_basics_using_ariadne/blob/main/snaps/types/object_types.png)
+
 **Query type**.
 
-![Image](https://github.com/LogeshVel/GraphQL_basics_using_ariadne/blob/main/snaps/types/query_types.png)
+![Image](https://github.com/LogeshVel/GraphQL_basics_using_ariadne/blob/main/snaps/types/query_type.png)
 
 **Mutation type**
 
-![Image](https://github.com/LogeshVel/GraphQL_basics_using_ariadne/blob/main/snaps/types/mutation.png)
+![Image](https://github.com/LogeshVel/GraphQL_basics_using_ariadne/blob/main/snaps/types/mutation_type.png)
+
+**Input types**
+
+![Image](https://github.com/LogeshVel/GraphQL_basics_using_ariadne/blob/main/snaps/types/input_type.png)
+
+**Object type - for Mutation response**
+
+![Image](https://github.com/LogeshVel/GraphQL_basics_using_ariadne/blob/main/snaps/types/mutation_response_type.png)
+
 
 ## Server
 

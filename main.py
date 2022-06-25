@@ -36,8 +36,6 @@ def generate_unique_id():
 def delete_book_from_book_store(book_id):
     """
     Call this function after calling is_book_exists_in_book_store() function
-    :param book_id:
-    :return:
     """
     logger.info(f"Deleting the Book of ID {book_id} from the Book store")
     for i, book in enumerate(BOOK_STORE):
@@ -102,17 +100,13 @@ def resolve_add_book(_, info, input):
 @mutation.field("update_book")
 def resolve_update_book(_, info, input):
     """
-    :param _:
-    :param info:
-    :param input:
-                input : {
-                        book_id: ID!
-                        title: String
-                        authors: [{
-                            name: String
-                            mail: String
-                        }]
-    :return:
+    input : {
+            book_id: ID!
+            title: String
+            authors: [{
+                name: String
+                mail: String
+            }]
     """
     book_id = input["book_id"]
     logger.info(f"Mutation update_book with the Book ID {book_id}")
